@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.MysqlApi.Register.Dao.RegisterDao">
+    <select id="checkUser" resultType="int">
+        select count(*) from user where username=#{username}
+    </select>
+    <insert id="register">
+        insert into user(username,password,money,pass) values(#{username},#{password},#{money},#{pass})
+    </insert>
+</mapper>

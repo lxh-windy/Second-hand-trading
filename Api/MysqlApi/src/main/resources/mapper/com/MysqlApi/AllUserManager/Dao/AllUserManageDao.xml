@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.MysqlApi.AllUserManage.Dao.AllUserManageDao">
+    <delete id="deleterUserSaleRecode">
+        DELETE goods FROM goods
+        INNER JOIN salerecode ON goods.gid = salerecode.gid
+        WHERE salerecode.status = 0 AND goods.uid = #{username};
+    </delete>
+</mapper>
